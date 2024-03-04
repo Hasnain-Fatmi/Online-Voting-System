@@ -1,0 +1,177 @@
+ /* Resetting default margin/padding */
+ body {
+    background: linear-gradient(to top, #ADD8E6, #FFFFFF);
+    background-attachment: fixed; /* Prevents background from repeating */
+    margin: 0; /* Reset default body margin */
+}
+
+
+.top-section {
+    background-color: #2e86de;
+    
+    padding: 10px 0;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height:60px;
+}
+
+/* Centering the main heading */
+.main-heading {
+    text-align: center;
+    margin-top: 20px; /* Adjust the spacing */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #2e86de;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 20px; /* Adjust the spacing */
+    z-index: 0;
+    
+}
+.main-content h2 {
+    margin-left:360px;
+    
+}
+/* OVS heading style */
+.sidebar-heading {
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 20px; /* Adjust the spacing */
+    font-size: 24px;
+    font-weight: bold;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    color:#fff;
+}
+.sidebar ul li {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    color:#fff;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    margin-left: 5px; /* Adjust the spacing */
+    color:#fff;
+}
+/* Styling the font awesome icon */
+.sidebar ul li i {
+    margin-right: 5px; /* Adjust the spacing */
+    color:#fff;
+}
+/* Dropdown menu */
+.dropdown {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+
+/* Table styles */
+.main-content {
+    margin-left: 250px; /* Adjust based on sidebar width */
+    padding-top: 60px; /* Adjust based on the height of the top section */
+    padding-left: 20px; /* Adjust based on sidebar width */
+}
+
+
+.table-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+    margin: 30px; /* Add margin to the container */
+    padding: 10px; /* Add padding to the container */
+   
+}
+
+.election-table {
+    width: 100%; /* Adjust the width as needed */
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.election-table th,
+.election-table td {
+    padding: 15px; /* Adjust the padding as needed */
+    text-align: left;
+}        
+
+
+
+.election-table th {
+background-color: #2e86de;
+color: #fff;
+}
+
+.election-table th,
+.election-table td {
+border-bottom: 1px solid #ddd;
+}
+
+.vote-btn {
+padding: 8px 12px;
+background-color: #2e86de;
+color: #fff;
+border: none;
+border-radius: 4px;
+text-decoration: none;
+transition: background-color 0.3s ease;
+}
+
+.vote-btn:hover {
+background-color: #1e6dc5;
+}
+/* Dropdown styles */
+.dropdown {
+position: absolute;
+top: 20px;
+right: 20px;
+}
+
+/* Hamburger icon styles */
+.menu-icon {
+width: 30px;
+height: 20px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+cursor: pointer;
+z-index: 1; /* Ensure icon remains on top */
+}
+
+.bar {
+width: 100%;
+height: 3px;
+background-color: #fff;
+border-radius: 2px;
+
+}
+
+/* Dropdown content styles */
+.dropdown-content {
+display: none;
+position: absolute;
+top: 35px; /* Adjust the dropdown position */
+right: 0; /* Position it correctly */
+background-color: #fff;
+min-width: 120px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+
+}
+
+.dropdown-content a {
+color: #333;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}

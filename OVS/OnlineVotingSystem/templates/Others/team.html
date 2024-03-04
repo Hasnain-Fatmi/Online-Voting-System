@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEAM SECTION</title>
+    <link rel="stylesheet" href="{% static 'Others/team_styles.css' %}">
+
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="right-text">
+            <a href="{% url 'home' %}">HOME </a>
+            <a href="{% url 'help' %}">HELP</a>
+            <a href="{% url 'contact' %}">CONTACT</a>
+        </div>
+        <div class="left-text">
+            Online Voting System
+        </div>
+    </div>
+<section>
+    <h1 class="title">our team</h1>
+    <div class="team-row">
+        <div class="member">
+            <img src="https://example.com/member1.jpg" alt="">
+            <h2>Saad Hassan</h2>
+            <!--<p>Member Introduction.</p>-->
+         </div>
+        <div class="member">
+            <img src="https://example.com/member2.jpg" alt="">
+            <h2>Hasnain Fatmi</h2>
+            <!--<p>Member Introduction.</p>-->     
+           </div>
+        <div class="member">
+            <img src="https://example.com/member3.jpg" alt="">
+            <h2>Saad Hussain</h2>
+            <!--<p>Member Introduction.</p>-->
+        </div>
+        <div class="member">
+            <img src="https://example.com/member4.jpg" alt="">
+            <h2>Rafeel Abdul</h2>
+            <!--<p>Member Introduction.</p>-->
+        </div>
+        <div class="member">
+            <img src="https://example.com/member5.jpg" alt="">
+            <h2>Mahad Hassan</h2>
+            <!--<p>Member Introduction.</p>-->
+        </div>
+    </div>
+</section>
+
+
+<script>
+    let prevScrollPos = window.pageYOffset;
+
+    window.onscroll = function() {
+        const currentScrollPos = window.pageYOffset;
+        const navbar = document.querySelector('.navbar');
+
+        if (prevScrollPos > currentScrollPos) {
+            navbar.classList.add('visible');
+            navbar.classList.remove('hidden');
+        } else {
+            navbar.classList.add('hidden');
+            navbar.classList.remove('visible');
+        }
+
+        prevScrollPos = currentScrollPos;
+    }
+</script>
+</body>
+</html>
+

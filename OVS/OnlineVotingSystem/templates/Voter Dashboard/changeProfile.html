@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+            background: linear-gradient(to top, #ADD8E6, #FFFFFF)
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+            padding: 20px;
+            margin-top: 50px; /* Added margin for better alignment */
+        }
+
+        .card-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px; /* Increased spacing between form groups */
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            margin-top: 20px; /* Added space above the button */
+        }
+
+        .form-group div {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px; /* Adjusted spacing between input fields */
+        }
+
+        .form-group div input {
+            width: 400px; /* Made input fields occupy full width */
+        }
+
+        .btn-back {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 4px;
+            transition: background-color 0.3s, border-color 0.3s;
+            margin-top: 10px; /* Added space above the button */
+            height:40px;
+            
+        }
+        
+        .btn-back:hover {
+        background-color: #2980b9;
+        border: 1px solid #2980b9;
+        text-decoration:none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">Update Profile</h5>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div>
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" class="form-control" value="{{ request.user.username }}" required>
+                    </div>
+                    <div>
+                        <label for="first_name">First Name:</label>
+                        <input type="text" name="first_name" class="form-control" value="{{ request.user.first_name }}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="last_name">Last Name:</label>
+                        <input type="text" name="last_name" class="form-control" value="{{ request.user.last_name }}" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="form-control" value="{{ request.user.email }}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="cnicNum">CNIC Number:</label>
+                        <input type="tel" name="cnicNum" class="form-control" value="{{ voter.CNIC }}" required>
+                    </div>
+                    <div>
+                        <label for="address">Address:</label>
+                        <input type="text" name="address" class="form-control" value="{{ voter.Address }}" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div>
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" name="phone" class="form-control" value="{{ voter.Phone_Number }}" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+                <a href="{% url 'voterPage' %}" class="btn-back">Go Back</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

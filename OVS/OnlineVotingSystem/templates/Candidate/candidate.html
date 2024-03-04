@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Candidate</title>
+    <style>
+        body {
+            background-color: #3498db; /* White background */
+            color: #000000; /* Black text color */
+            margin-top: 50px;
+            padding-top: 50px;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #ffffff;
+          color: #000000;
+          font-family: Arial, sans-serif;
+          border-radius: 20px;
+      }
+
+        .heading {
+          text-align: center;
+          margin-bottom: 20px; /* Add margin between heading and table */
+      }
+
+      .heading h3,
+      .heading h2 {
+          margin: 0;
+      }
+
+      .divider {
+          border-bottom: 1px solid #ccc; /* Divider line */
+          margin-bottom: 20px; /* Space below the divider */
+      }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .card + .card {
+          margin-top: 20px; /* Adds space between adjacent cards */
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .table th,
+    .table td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: left;
+    }
+
+    .table th {
+        background-color: #f2f2f2;
+    }
+
+        .vote-btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .vote-btn:hover {
+            background-color: #2980b9;
+            border: 1px solid #2980b9;
+        }
+
+        .btn-back {
+          display: block;
+          width: 70%; /* Adjust the width as needed */
+          margin: auto; /* Center the button horizontally */
+          padding: 10px;
+          text-align: center;
+          text-decoration: none;
+          color: #fff;
+          background-color: #3498db;
+          border: 1px solid #3498db;
+          border-radius: 4px;
+          transition: background-color 0.3s, border-color 0.3s;
+          margin-top: 20px;
+      }
+
+      .btn-back:hover {
+          background-color: #2980b9;
+          border: 1px solid #2980b9;
+      }
+      a {
+        text-decoration: none;
+        color:#333;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <h2 style="text-align: center;">Available Candidates for the Election of {{ obj.title }}</h3>
+        <div class="card">
+          <form action="" method="POST">
+              {% csrf_token %}
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Candidate</th>
+                          <th>Vote</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {% for candidateID in obj.candidate_set.all %}
+                          <tr>
+                              <td>
+                                  <a href="{% url 'detail' candidateID.id %}">{{ candidateID.name }}</a>
+                              </td>
+                              <td>
+                                  <input
+                                      type="radio"
+                                      id="id_{{ candidateID.id }}"
+                                      name="{{ candidateID.position }}"
+                                      value="{{ candidateID.id }}"
+                                      required
+                                  />
+                              </td>
+                          </tr>
+                      {% empty %}
+                          <tr>
+                              <td colspan="2">No Candidates Available</td>
+                          </tr>
+                      {% endfor %}
+                  </tbody>
+              </table>
+              <input
+                  type="submit"
+                  class="vote-btn"
+                  value="Vote"
+              />
+          </form>
+      </div>
+
+        <div class="card">
+            <a href="{% url 'voterPage' %}" class="btn-back">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Voter Dashboard/voterPage_style.css' %}">
+</head>
+<body>
+    <div class="top-section">
+        <!-- Heading above the sidebar -->
+        <div class="main-heading">
+            <h2>Voter Dashboard</h2>
+        </div>
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- OVS heading -->
+            <div class="sidebar-heading">
+                OVS
+            </div>
+            <ul>
+                <li><i class="fas fa-user-plus"></i><a href="{% url 'terms' %}">Register as a Candidate</a></li>
+                <li><i class="fas fa-user-edit"></i><a href="{% url 'profileChange' %}">Edit Profile</a></li>
+                <li><i class="fas fa-key"></i><a href="{% url 'passwordChange' %}">Change Password</a></li>
+                <li><i class="fas fa-vote-yea"></i><a href="{% url 'ballot' %}">View Own Ballot</a></li>
+                <li> <i class="fas fa-poll"></i><a href="{% url 'result' %}">View Results</a></li>
+                <li><i class="fas fa-comment-alt"></i><a href="{% url 'complaint' %}">Feedback and Complaints</a></li>
+                <li><i class="fas fa-sign-out-alt"></i><a href="logoutview">Logout</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <div class="menu-icon" onclick="toggleDropdown()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="{% url 'home' %}" class="active">Home</a> 
+                <a href="{% url 'help' %}">Help</a>
+                <a href="{% url 'contact' %}">Contact</a>
+               
+            </div>
+        </div>
+ 
+    <main class="main-content">
+        {% if is_voting_period %}
+        
+        <h2>Positions Available for Voting</h2>
+        <div class="table-container">
+            <table class="election-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col">Vote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tbody>
+                        {% for candidateID in obj %}
+                            <tr>
+                                <td>{{ candidateID.title }}</td>
+                                <td>
+                                    <a href="{% url 'candidate' candidateID.id %}" class="vote-btn">Vote</a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="2">No Positions Available</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            {% if start_time %}
+            
+                <p>Voting period is currently closed. It will start from {{ start_time }} and end at {{ end_time }}</p>
+            {% else %}
+            
+                <p>Voting period times are not decided yet.</p>
+            {% endif %}
+        {% endif %}
+
+    </main>
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

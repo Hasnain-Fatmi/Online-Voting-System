@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Complete</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .btn-back {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: #2980b9;
+            border: 1px solid #2980b9;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Thank You for Registering as a Candidate</h1>
+    <p>We have received your application. We will review it and notify you of the result via email.</p>
+
+
+    <div class="card">
+        <a href="{% url 'voterPage' %}" class="btn-back">Go Back</a>
+    </div>
+</body>
+
+</html>

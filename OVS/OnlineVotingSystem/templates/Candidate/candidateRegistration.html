@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'Candidate/candidateRegistration_styles.css' %}">
+    <title>Candidate Registration</title>
+
+    <style>
+       
+       @media screen and (max-width: 768px) {
+            /* Adjust styles for smaller screens */
+            .navbar {
+                position: relative;
+            }
+            .wrapper {
+                width: 90%;
+                margin-top: 60px; 
+            }
+        }
+
+        .navbar
+         {
+         position: relative;
+        background-color: #8b5a2b;
+        overflow: hidden;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        }
+        .wrapper {
+            width: 85%;
+            margin-top: 60px;
+        }
+        .navbar a
+    {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    .navbar a:hover 
+    {
+        background-color: #ddd;
+        color: black;
+    } 
+    .navbar .right-text 
+    {
+        float: right;
+        padding: 5px 10px;
+        font-size:16px;
+    }
+    .navbar .left-text 
+    {
+        float: left;
+        padding: 20px 15px;
+        font-size:16px;
+        color:#fff;
+    }
+        
+        .input_box {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .input_box .input_field {
+            width: 100%;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input_box .input_field input {
+            width: calc(100%-15px);
+        }
+
+        .input_box .input_field label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .input_box .input_field input[type="file"] {
+            padding: 10px;
+        }
+
+        .hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .visible {
+            transform: translateY(0);
+            transition: transform 0.3s ease-in-out;
+        }
+
+.input_field label {
+    /* Styling for the label */
+    color: white; /* Font color set to white */
+}
+
+.input_field textarea {
+    /* Styling for the textarea */
+    color: white; 
+    background-color: transparent; 
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 8px;
+    resize: vertical;
+    width: 100%; 
+    height: 150px;
+}
+
+.input_field {
+        text-align: center;
+    }
+
+    /* Adjust the width of the uploaded image if needed */
+    #uploaded_image {
+        width: 200px; /* Example width, adjust as needed */
+        display: block; /* Ensures centered alignment */
+        margin: 0 auto; /* Centers the image */
+    }
+
+    </style>
+</head>
+
+<body>
+
+ 
+
+    <div class="wrapper">
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h1>Candidate Registration</h1>
+            <div class="input_box">
+                <div class="input_field">
+                    <div id="picture_display">
+                        <img id="uploaded_image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/768px-Windows_10_Default_Profile_Picture.svg.png?20221210150350" alt="Uploaded Picture" width="200">
+                    </div>
+                </div>
+            </div>
+            <div class="input_box">
+                <div class="input_field">
+                    <input type="file" name="candidate_picture" accept="image/*" required>
+                </div>
+               <!-- First Name -->
+                <div class="input_field">
+                    <input type="text" name="firstName" placeholder="First Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+            </div>    
+            <div class="input_box">
+                <!-- Last Name -->
+                <div class="input_field">
+                    <input type="text" name="lastName" placeholder="Last Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input_field">
+                    <input type="text" name="fatherName" placeholder="Father Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+            </div>
+            <div class="input_box">        
+            <!-- Email Address and CNIC Number -->
+                <!-- Email Address -->
+                <div class="input_field">
+                    <input type="text" name="email" placeholder="Email Address" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <!-- CNIC Number -->
+                <div class="input_field">
+                    <input type="tel" name="cnic"  placeholder="CNIC Number without Dashes" pattern="[0-9]{13}" required>
+                    <i class='bx bxs-id-card'></i>
+                </div>
+            </div>    
+            <div class="input_box">
+           <!-- Address and city -->
+                <!-- Address -->
+                <div class="input_field">
+                    <input type="text" name="address" placeholder="Address" required>
+                    <i class='bx bxs-home'></i>
+                </div>
+                <!--City-->
+                <div class="input_field">
+                    <input type="text" name="city" placeholder="City" required>
+                    <i class='bx bxs-home'></i>                    
+                </div>
+            </div>    
+            <div class="input_box">    
+                <!-- Phone Number -->
+                <div class="input_field">
+                    <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{11}" required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+                <!-- Gender -->
+                <div class="input_field">
+                    <select name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class='bx bxs-user-detail'></i>
+                </div>
+            </div>
+            <div class="input_box">    
+                <!-- Date of Birth -->
+                <div class="input_field">
+                    <input type="number" name="age" placeholder="Age" min="18" max="100" required>
+                </div>
+
+                <div class="input_field">
+                    <input type="text" name="nationality" placeholder="Nationality" required>
+                    <i class='bx bxs-home'></i>
+                </div>
+            </div>
+            <!--Party-->
+            <div class="input_box">
+                <div class="input_field">
+                    <input type="text" name="party" placeholder="Party" required>
+                    <i class='bx bxs-group'></i>
+                </div>
+                <!-- Symbol -->
+                <div class="input_field">
+                    <input type="text" name="symbol" placeholder="Symbol" required>
+                    <i class='bx bxs-shield'></i>
+                </div>
+            </div>
+            <div class="input_box">
+                <div class="input_field">
+                    <label for="legal_disclaimer">Party Symbol:</label>
+                    <input type="file" name="symbol_picture" accept="image/*" required>
+                </div>
+            </div>    
+            <div class="input_box">
+                <div class="input_field">
+                    <label for="legal_disclaimer">Legal Disclaimer:</label>
+                    <textarea id="legal_disclaimer" name="legal_disclaimer" placeholder="Enter legal disclaimer (maximum 500 words)" maxlength="500" required></textarea>
+                </div>
+            </div>
+            
+
+            <!-- Eligibility Confirmation -->
+            <label><input type="checkbox" required>  I hereby confirm that I meet all eligibility criteria. If the information is found to be false then I will be held liable to legal action.</label>
+            <br></br>
+            <!-- Register Button -->
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+    <script>
+
+function displayImage(input) {
+        const file = input.files[0];
+        const image = document.getElementById('uploaded_image');
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                image.src = e.target.result;
+            }
+            reader.readAsDataURL(file);
+        } else {
+            image.src = 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Windows_10_Default_Profile_Picture.svg/768px-Windows_10_Default_Profile_Picture.svg.png?20221210150350';
+        }
+    }
+
+     // Listen for changes in the file input and call the displayImage function
+    const fileInput = document.querySelector('input[name="candidate_picture"]');
+    fileInput.addEventListener('change', function() {
+    displayImage(this);
+    });
+
+
+        let prevScrollPos = window.pageYOffset;
+
+        window.onscroll = function() {
+            const currentScrollPos = window.pageYOffset;
+            const navbar = document.querySelector('.navbar');
+
+            if (prevScrollPos > currentScrollPos) {
+                navbar.classList.add('visible');
+                navbar.classList.remove('hidden');
+            } else {
+                navbar.classList.add('hidden');
+                navbar.classList.remove('visible');
+            }
+
+            prevScrollPos = currentScrollPos;
+        }
+
+        // JavaScript code to limit the textarea to 500 words
+const textarea = document.getElementById('legal_disclaimer');
+const wordCount = document.getElementById('word_count');
+
+textarea.addEventListener('input', function() {
+    const words = this.value.split(/\s+/).filter(function(word) {
+        return word.length > 0;
+    });
+    
+    if (words.length > 500) {
+        this.value = this.value.substr(0, this.value.lastIndexOf(' ', this.value.length - 1));
+    }
+
+    wordCount.textContent = words.length + ' words';
+});
+    </script>
+</body>
+</html>

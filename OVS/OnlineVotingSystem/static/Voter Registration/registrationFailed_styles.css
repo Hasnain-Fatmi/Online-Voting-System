@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');*/
+    background-image: url('8.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  }
+  
+  .container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10 px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #ffffff;
+  }
+  
+  p {
+    color: #e0e0e0;
+  }
+
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .retry-btn,
+  .contact-btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .retry-btn {
+    background-color: #ff6666;
+    color: #fff;
+  }
+  
+  .contact-btn {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  .retry-btn:hover,
+  .contact-btn:hover {
+    background-color: #c4a7a7;
+  }
+  
+  

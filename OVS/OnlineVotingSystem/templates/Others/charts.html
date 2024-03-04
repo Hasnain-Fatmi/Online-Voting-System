@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Time Monitoring</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .dashboard-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .dashboard-button:hover {
+            background-color: #45a049;
+        }
+
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        canvas {
+            width: 45%;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-heading {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            canvas {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Real Time Monitoring</h1>
+    </header>
+
+    <button class="dashboard-button" onclick="goToDashboard()">Go to Dashboard</button>
+
+    <h2 class="section-heading">Candidate Votes</h2>
+    <div class="chart-container">
+        <canvas id="myChart" width="300" height="300"></canvas>
+        <canvas id="myChart2" width="300" height="300"></canvas>
+    </div>
+
+    <h2 class="section-heading">Position Votes</h2>
+    <div class="chart-container">
+        <canvas id="myChart3" width="300" height="300"></canvas><br><br>
+        <canvas id="myChart4" width="300" height="300"></canvas>
+    </div>
+
+    <script>
+        function goToDashboard() {
+            window.location.href = '/admin/';
+        }
+
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: {{candidate_labels|safe}},
+                datasets: [{
+                    label: 'Candidate Votes',
+                    data: {{candidate_data|safe}},
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                            precision: 0
+                        }
+                    }
+                },
+                responsive: false,
+                maintainAspectRatio: false
+            }
+        });
+
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart2 = new Chart(ctx2, {
+            type: 'pie',
+            data: {
+                labels: {{candidate_labels|safe}},
+                datasets: [{
+                    label: 'position Votes',
+                    data: {{candidate_data|safe}},
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                            precision: 0
+                        }
+                    }
+                },
+                responsive: false,
+                maintainAspectRatio: false
+            }
+        });
+
+        
+        var ctx3 = document.getElementById('myChart3').getContext('2d');
+        var myChart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: {{position_labels|safe}},
+                datasets: [{
+                    label: 'position Votes',
+                    data: {{position_data|safe}},
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                            precision: 0
+                        }
+                    }
+                },
+                responsive: false,
+                maintainAspectRatio: false
+            }
+        });
+
+
+        var ctx4 = document.getElementById('myChart4').getContext('2d');
+        var myChart4 = new Chart(ctx4, {
+            type: 'pie',
+            data: {
+                labels: {{position_labels|safe}},
+                datasets: [{
+                    label: 'position Votes',
+                    data: {{position_data|safe}},
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1,
+                            precision: 0
+                        }
+                    }
+                },
+                responsive: false,
+                maintainAspectRatio: false
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>

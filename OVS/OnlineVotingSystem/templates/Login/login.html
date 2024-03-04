@@ -1,0 +1,103 @@
+<!DOCTYPE HTML>
+<HTML lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'Login/login_styles.css'%}">
+
+    <title>Login</title>
+   
+    <style>
+       
+.navbar 
+{
+    background-color: #333;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.navbar a
+{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+.navbar a:hover 
+{
+    background-color: #ddd;
+    color: black;
+} 
+.navbar .right-text 
+{
+    float: right;
+    padding: 5px 10px;
+    font-size:16px;
+}
+.navbar .left-text 
+{
+    float: left;
+    padding: 20px 15px;
+    font-size:16px;
+    color:#fff;
+}
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="right-text">
+            <a href="{% url 'home' %}">HOME</a>
+          <a href="{% url 'help' %}">HELP</a>
+          <a href="{% url 'contact' %}">CONTACT</a>
+        </div>
+        <div class="left-text">
+            Online Voting System
+        </div>
+    </div>
+    
+
+    <div class ="wrapper">
+        <form action ="" method="post">
+            {% csrf_token %}
+            <H1>Login</H1>
+            <div class="input_box">
+                <input type ="text" name = "firstName"placeholder="Username" required> 
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input_box">
+                <input type ="Password" name = "pass1"placeholder="Password" required> 
+                <i class='bx bxs-lock-alt' ></i>          
+            </div>
+            
+            <div class="remember_me">
+                <label><input type="checkbox">Remember me </label>
+                <a href = "password_reset">Forget Password?</a> 
+            </div>
+           
+            <!--<a href="" class="btn">Login</a>-->
+            <button type="submit" class="btn">Login</button>
+        
+
+            <div class="register_link">
+                <p>Not a Registered Voter?<a href = "registeration">Register</a>
+                </p>
+             </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+
