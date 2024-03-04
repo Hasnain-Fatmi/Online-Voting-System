@@ -17,4 +17,8 @@
 
 ● Saad Hussain (21L-5178)
 
+# NOTE
+
+● For Email Verification, You would have to add an email in the setting.py file.
+
 
