@@ -1,0 +1,1 @@
+The "Online Voting System" is a transformative project poised to modernize the electoral process, providing with a secure and convenient platform to exercise voting rights. The project encompasses a range of key functionalities to cater to the diverse needs of both voters and election administrators.
