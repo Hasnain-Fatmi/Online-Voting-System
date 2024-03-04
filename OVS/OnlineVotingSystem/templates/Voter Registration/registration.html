@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'Voter Registration/registration_styles.css' %}">
+    <title>Registration</title>
+
+    
+    <style>
+       
+        @media screen and (max-width: 768px) {
+            /* Adjust styles for smaller screens */
+            .navbar {
+                position: relative;
+            }
+            .wrapper {
+                width: 90%; /* Adjust the width as needed */
+                margin-top: 60px; /* Add space to avoid overlap */
+                /* Other styles */
+            }
+        }
+
+
+
+        .navbar
+         {
+         position: relative;
+        background-color: #333;
+        overflow: hidden;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        }
+        .wrapper {
+            width: 90%; /* Adjust the width as needed */
+            margin-top: 60px; /* Add space to avoid overlap */
+            /* Other styles */
+        }
+        .navbar a
+    {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+    }
+    .navbar a:hover 
+    {
+        background-color: #ddd;
+        color: black;
+    } 
+    .navbar .right-text 
+    {
+        float: right;
+        padding: 5px 10px;
+        font-size:16px;
+    }
+    .navbar .left-text 
+    {
+        float: left;
+        padding: 20px 15px;
+        font-size:16px;
+        color:#fff;
+    }
+        
+    </style>
+
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="right-text">
+            <a href="{% url 'home' %}">HOME</a>
+            <a href="{% url 'team' %}">ABOUT</a>
+            <a href="{% url 'help' %}">CONTACT</a>
+        </div>
+        <div class="left-text">
+            Online Voting System
+        </div>
+    </div>
+    
+    <div class="wrapper">
+        <form action="" method="post">
+            {% csrf_token %}
+            <h1>Registration</h1>
+        
+            <!-- Other input fields -->
+
+            <!-- First and Last Name -->
+            <div class="input_box">
+                <!-- First Name -->
+                <div class="input_filed">
+                    <input type="text" name="firstName" placeholder="First Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <!-- Last Name -->
+                <div class="input_filed">
+                    <input type="text" name="lastName" placeholder="Last Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+            </div>
+
+            <!-- Email Address and CNIC Number -->
+            <div class="input_box">
+                <!-- Email Address -->
+                <div class="input_filed">
+                    <input type="text" name="emailAddress" placeholder="Email Address" required>
+                    <i class='bx bxs-envelope'></i>
+                </div>
+                <!-- CNIC Number -->
+                <div class="input_filed">
+                    <input type="tel" name="cnicNum"  placeholder="CNIC Number without Dashes" pattern="[0-9]{13}" required>
+                    <i class='bx bxs-id-card'></i>
+                </div>
+            </div>
+
+            <!-- Address and Phone Number -->
+            <div class="input_box">
+                <!-- Address -->
+                <div class="input_filed">
+                    <input type="text" name="address" placeholder="Address" required>
+                    <i class='bx bxs-home'></i>
+                </div>
+                <!-- Phone Number -->
+                <div class="input_filed">
+                    <input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{11}" required>
+                    <i class='bx bxs-phone'></i>
+                </div>
+            </div>
+
+            <!-- Gender and Date of Birth -->
+            <div class="input_box">
+                <!-- Gender -->
+                <div class="input_filed">
+                    <select name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <!-- Date of Birth -->
+                <div class="input_filed">
+                    <input type="date" name="date_of_birth" placeholder="Date of Birth" required>
+                    <i class='bx bxs-calendar'></i>
+                </div>
+            </div>
+
+            <!-- Password and Confirm Password -->
+            <div class="input_box">
+                <!-- Password -->
+                <div class="input_filed">
+                    <input type="Password" name="password" placeholder="Password" required>
+                    <i class='bx bxs-lock-alt'></i> 
+                </div>
+                <!-- Confirm Password -->
+                <div class="input_filed">
+                    <input type="Password" name="confirmPassword" placeholder="Confirm Password" required>
+                    <i class='bx bxs-lock-alt'></i>   
+                </div>
+            </div>
+            
+            <!-- Declaration Checkbox and Register Button -->
+            <label><input type="checkbox" required>I hereby declare the information provided above is true and correct</label>
+            <button type="submit" class="btn">Register</button>
+  
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+
+body {
+    font-family:"Poppins,Sans-Serif";
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /*background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');*/
+    background-image: url('8.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+  
+  .container {
+    width: 350px;
+    padding: 20px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 0 10 px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  h2{
+    font-size: 32px;
+    text-align: center; 
+    color: #fff;   
+   }
+  
+   
+  p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: #fff;   
+  }
+  
+  .login-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #002a57;
+    color: #fff;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #0056b3;
+  }
+  

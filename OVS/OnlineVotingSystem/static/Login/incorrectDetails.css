@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .error-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .error-message p {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .retry-button, .reset-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .retry-button {
+    background-color: #3498db;
+    color: #fff;
+  }
+  
+  .retry-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .reset-button {
+    background-color: #e74c3c;
+    color: #fff;
+  }
+  
+  .reset-button:hover {
+    background-color: #c0392b;
+  }
+  .retry-button a,
+  .reset-button a {
+    text-decoration: none;
+    color: white; /* Set the text color to white */
+  }
+  

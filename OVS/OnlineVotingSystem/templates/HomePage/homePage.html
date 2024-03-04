@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" 
+      referrerpolicy="no-referrer" />
+       <link rel="stylesheet" href="{% static 'Home Page/homePage_styles.css' %}">
+       <title>Online Voting System</title>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+               <div class="logo"><a href="#">OVS</a></div>
+               <ul class="links">
+                  <li><a href="{% url 'home' %}">HOME </a></li>
+                  <li><a href="{% url 'team' %}">TEAM </a></li>
+                  <li><a href="{% url 'services' %}">SERVICES </a></li>
+                  <li><a href="{% url 'help' %}">HELP</a></li>
+                  <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                </ul>
+                <a href="{% url 'login' %}" class="action_btn">LOGIN</a>
+                <div class="toggle_btn">
+                 <i class="fa-solid fa-bars"></i>
+                </div>            
+            </div>
+
+            <div class="dropdown_menu">
+                <li><a href="{% url 'home' %}">HOME </a></li>
+                <li><a href="{% url 'team' %}">TEAM </a></li>
+                <li><a href="{% url 'services' %}">SERVICES </a></li>
+                <li><a href="{% url 'help' %}">HELP </a></li>
+                <li><a href="{% url 'contact' %}">CONTACT</a></li>
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+                <li><a href="{% url 'register' %}" >REGISTER AS A VOTER</a></li>
+            </div>
+        </header>
+
+        <main>
+            <section id="hero">
+                <h1>Welcome</h1>
+                <p>
+                    Redefining Civic Engagement. Welcome to a seamless and secure voting experience that puts the power of democracy at your fingertips.<br /> Where technology meets democracy for a more accessible and efficient voting process.
+                    <br />Your Voice, Amplified. <br /><br />
+                </p>
+                <a href="{% url 'register' %}" class="action_btn">Get Started</a>
+            </section>
+        </main>
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn');
+            const toggleBtnIcon = document.querySelector('.toggle_btn i');
+            const dropDownMenu = document.querySelector('.dropdown_menu');
+
+            toggleBtn.onclick = function() {
+            dropDownMenu.classList.toggle('open');
+            const isOpen = dropDownMenu.classList.contains('open');
+
+            toggleBtnIcon.classList = isOpen
+            ? 'fa-solid fa-xmark'
+            : 'fa-solid fa-bars'
+            };
+        </script>
+
+    
+    </body>
+</html>

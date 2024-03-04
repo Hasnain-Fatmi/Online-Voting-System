@@ -1,0 +1,21 @@
+{% autoescape off %}
+
+Salam {{ name }},
+
+Thank you for registering with our online voting system! We're thrilled to have you join us in shaping our community through your valuable vote.
+
+To ensure the security of your account and the integrity of our voting process, we kindly ask you to verify your email address.
+
+Please click on the following link to complete your registration:
+Confirmation Link: http://{{ domain }}{% url 'activate' uidb64=uid token=token %} 
+
+Once verified, you'll gain full access to our platform, where you can explore candidates, and, most importantly, cast your vote during elections.
+
+Should you encounter any issues or have any questions, feel free to reach out to our support team at [Support Email/Contact].
+
+Thank you for being an active participant in our democratic process.
+
+Best regards,
+Team OVS
+
+ {% endautoescape %}

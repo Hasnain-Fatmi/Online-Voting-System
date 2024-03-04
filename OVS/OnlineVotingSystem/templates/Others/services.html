@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services</title>
+  {%load static%}
+  <link rel="stylesheet" href="{% static 'Others/service_styles.css'%}">
+</head>
+<body>
+  <div class="navbar">
+    <div class="right-text">
+      <a href="{% url 'home' %}">HOME </a>
+      <a href="{% url 'help' %}">HELP</a>
+      <a href="{% url 'contact' %}">CONTACT</a>
+    </div>
+    <div class="left-text">
+      Online Voting System
+    </div>
+  </div>
+
+  <div class="services-heading">
+    <h1>Our Services</h1>
+  </div>
+
+  
+  <div class="services">
+    <div class="column">
+      <!-- Service 1 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Voter Profiles</h2>
+          <p>Our system allows the creation and management of voter profiles, ensuring accurate and secure identification of voters in the electoral process.</p>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Ballot Creation</h2>
+          <p>Creation and customization of ballots, ensuring accuracy and transparency in the voting process, including various types of ballots as per electoral requirements.</p>
+        </div>
+      </div>
+
+      <!-- Service 5 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Real-time Monitoring</h2>
+          <p>Live monitoring and tracking of voting progress, providing real-time insights and analytics to ensure transparency and efficiency during the election period.</p>
+        </div>
+      </div>
+
+      <!-- Service 7 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Feedback and Complaints</h2>
+          <p>Provision for voters and stakeholders to provide feedback and register complaints, ensuring an avenue for addressing concerns and improving the electoral process.</p>
+        </div>
+      </div>
+
+      <!-- Service 9 -->
+      <div class="service-box ">
+        <div class="service-details">
+          <h2>Election Analysis</h2>
+          <p>In-depth analysis of election data and trends, offering valuable insights for understanding voter behavior and enhancing future electoral strategies.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="column">
+      <!-- Service 2 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Candidate Profiles</h2>
+          <p>Comprehensive management of candidate profiles, enabling the inclusion of candidate information and facilitating voter access to candidate details.</p>
+        </div>
+      </div>
+
+      <!-- Service 4 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Secure Voting</h2>
+          <p>Implementation of robust security measures to safeguard the integrity and confidentiality of the voting process, ensuring a secure environment for every vote cast.</p>
+        </div>
+      </div>
+
+      <!-- Service 6 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Results Tabulation</h2>
+          <p>Automated aggregation and tabulation of election results, offering quick and accurate computation of votes for timely declaration of outcomes.</p>
+        </div>
+      </div>
+
+      <!-- Service 8 -->
+      <div class="service-box">
+        <div class="service-details">
+          <h2>Download PDF Result</h2>
+          <p>Access to download election results in PDF format, enabling stakeholders to retain and share official outcome documents securely.</p>
+        </div>
+      </div>      
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

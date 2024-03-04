@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /*background-image: url('https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1517&q=80');*/
+  background-image: url('19.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.wrapper {
+  width: 320px; /* Adjusted width to match login_style.css */
+  margin-top: 60px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  backdrop-filter: blur(30px);
+  color: #fff;
+  border-radius: 10px;
+  padding: 25px 30px; /* Adjusted padding */
+  margin-bottom: 10px;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrapper .input_box {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.wrapper .input_box input {
+  width: calc(100% - 5px);
+  height: 45px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 12px 20px;
+}
+
+.input_box input::placeholder {
+  color: #fff;
+}
+
+.input_box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #fff;
+}
+
+.wrapper .remember_me {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14.5px;
+  margin-bottom: 20px;
+}
+
+.remember_me label input {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.remember_me a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember_me a:hover {
+  text-decoration: underline;
+}
+
+.input_box select {
+  width: calc(100% - 5px);
+  height: 45px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .2);
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+  border-radius: 40px;
+  padding: 12px 55px 11px 5px;
+}
+
+.input_box select option {
+  color: #000;
+}
+
+
+.wrapper .btn {
+  width: 40%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin-left: 280px
+}
+
+.wrapper .register_link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register_link p a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register_link p a:hover {
+  text-decoration: underline;
+}
+

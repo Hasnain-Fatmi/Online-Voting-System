@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Own Ballot</title>
+    <style>
+            body {
+            background: linear-gradient(135deg, #ffecd2,lightblue);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            margin-top: -50px; /* Adjust the negative margin for positioning */
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff6f61;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid #eee;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .table th {
+            background-color: #f9f9f9;
+            color: #333;
+            font-weight: bold;
+        }
+
+    
+
+        .table tbody tr:hover {
+            background-color: #e0e0e0;
+        }
+
+        .btn-back {
+            display: block;
+            width: 50%;
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border: 1px solid #3498db;
+            border-radius: 4px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .btn-back:hover {
+            background-color: #2980b9;
+            border: 1px solid #2980b9;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .candidate-info {
+            font-weight: bold;
+        }
+        .timestamp {
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Voted Candidates</h2>
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Candidate</th>
+                            <th scope="col">Position</th>
+                            <th scope="col">Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vote in voted_candidates %}
+                            <tr>
+                                <td>{{ vote.candidate.name }}</td>
+                                <td>{{ vote.position.title }}</td>
+                                <td>{{ vote.timestamp }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="card">
+            <a href="{% url 'voterPage' %}" class="btn-back">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>

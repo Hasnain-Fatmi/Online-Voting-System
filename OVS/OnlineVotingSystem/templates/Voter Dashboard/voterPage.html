@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css' rel='stylesheet'>
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'Voter Dashboard/voterPages.css'%}">
+    <title>DashBoard</title>
+   </head>
+   <body>
+    <div class="navbar">
+        <div class="right-text">
+          <a href="{% url 'home' %}">HOME</a>
+          <a href="{% url 'help' %}">HELP</a>
+          <a href="{% url 'contact' %}">CONTACT</a>
+        </div>
+        <div class="center-text">
+            <h1>Voter Dashboard</h1>
+        </div>
+    </div>
+  <div class="main_box">
+    <input type="checkbox" id="check">
+    <div class="btn_one">
+      <label for="check">
+        <i class="fas fa-bars"></i>
+      </label>
+    </div>
+    <div class="sidebar_menu">
+      <div class="logo">
+        <a href="#">OV<span>S</span></a>
+      </div>
+        <div class="btn_two">
+          <label for="check">
+            <i class="fas fa-times"></i>
+          </label>
+        </div>
+      <div class="menu">
+        <ul>
+            <li>
+              <i class="fas fa-user-plus"></i>
+              <a href="{% url 'terms' %}">Register As candidate</a>
+            </li>
+            <li>
+              <i class="fas fa-key"></i>
+              <a href="{% url 'passwordChange' %}">Change Password</a>
+            </li>
+            <li>
+              <i class="fas fa-user-edit"></i>
+              <a href="{% url 'profileChange' %}">Edit Profile</a>
+            </li>
+            <li>
+              <i class="fas fa-vote-yea"></i>
+              <a href="{% url 'ballot' %}">View Own Ballot</a>
+            </li>
+            <li>
+              <i class="fas fa-poll"></i>
+              <a href="{% url 'result' %}">View Results</a>
+            </li>
+            <li>
+              <i class="fas fa-comment-alt"></i>
+              <a href="{% url 'complaint' %}">Feedback and Complaint</a>
+            </li>
+            <li>
+              <i class="fas fa-sign-out-alt"></i>
+              <a href="logoutview">Logout</a>
+            </li>
+          </ul>
+      </div>
+    </div>
+    <main class="main-content">
+        {% if is_voting_period %}
+        <h2>Positions Available for Voting</h2>
+        <div class="table-container">
+            <table class="election-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col">Vote</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tbody>
+                        {% for candidateID in obj %}
+                            <tr>
+                                <td>{{ candidateID.title }}</td>
+                                <td>
+                                    <a href="{% url 'candidate' candidateID.id %}" class="vote-btn">Vote</a>
+                                </td>
+                            </tr>
+                        {% empty %}
+                            <tr>
+                                <td colspan="2">No Positions Available</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </tbody>
+            </table>
+        </div>
+        {% else %}
+            {% if start_time %}
+                <p>Voting period is currently closed. It will start from {{ start_time }} and end at {{ end_time }}</p>
+            {% else %}
+                <p>Voting period times are not decided yet.</p>
+            {% endif %}
+        {% endif %}
+
+    </main>
+  </div>
+
+  </body>
+
+</html>

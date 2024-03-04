@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Candidate Registration Terms and Conditions</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'Candidate/termsAndConditions_styles.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Candidate Registration Terms and Conditions</h1>
+    <div class="terms">
+      <!-- Your terms and conditions here -->
+      <p><strong>1. Eligibility Criteria:</strong> Candidates must meet the legal eligibility requirements to run for the specific position as per the constitution or electoral laws. Age, citizenship, residency, and any other legally mandated criteria must be met.</p>
+
+      <p><strong>2. Documentation and Information:</strong> Candidates must submit accurate and verifiable personal information, including identification documents, contact details, and any relevant affiliations or prior political engagements.</p>
+
+      <p><strong>3. Nomination Process:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>4. Code of Conduct:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>5. Campaigning Regulations:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>6. Declaring Your Candidacy:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>7. Disqualification and Appeals:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>8. Data Privacy and Confidentiality:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>9. Compliance with Electoral Laws:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>10. Termination or Withdrawal:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>11. Acknowledgment and Acceptance:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>12. Modification of Terms:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <p><strong>13. Election Day:</strong> Candidates need to follow the prescribed nomination process within the designated timeline. Submission of required paperwork, such as nomination forms, declarations, financial disclosures, etc., should be completed in accordance with the election commission's guidelines.</p>
+
+      <!-- Include other terms in a similar format -->
+
+      <div class="accept-terms">
+        <input type="checkbox" id="acceptCheckbox">
+        <label for="acceptCheckbox">I have read all the terms and conditions and I accept them</label>
+      </div>
+
+      <button id="submitButton" disabled>Next</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const acceptCheckbox = document.getElementById('acceptCheckbox');
+        const submitButton = document.getElementById('submitButton');
+      
+        acceptCheckbox.addEventListener('change', function() {
+          submitButton.disabled = !acceptCheckbox.checked;
+        });
+      
+        submitButton.addEventListener('click', function() {
+          if (acceptCheckbox.checked) {
+            // Replace 'next-page.html' with the URL of the next page
+            window.location.href = 'candidate_registration';
+          } else {
+            alert('Please accept the terms and conditions.');
+          }
+        });
+      });
+      
+  </script>
+
+</body>
+</html>

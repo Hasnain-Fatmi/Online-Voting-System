@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Candidate Details</title>
+    <style>
+        /* Your existing styles */
+        body {
+            background: linear-gradient(45deg, #b57aee, #00e3fd);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Updated card styles */
+        .container-fluid {
+            margin-top: 50px;
+        }
+
+        .card {
+            width: 25rem;
+            border: 1px solid #3498db;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .table td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid as-full">
+        <div class="row as-flex d-flex justify-content-center">
+            <div class="col-5 align-self-center">
+                <div class="card border-primary mb-3 bg-dark" style="width: 25rem;">
+                    <div class="card-body">
+                        <div class="card border-primary mb-3 bg-light" style="width: 23rem;">
+                            <img src="{{ obj.image.url }}" class="card-img-top" alt="Candidate Image">
+                            <div class="card-body">
+                                <table class="table table-striped table-hover">
+                                    <tbody>
+                                        <tr>
+                                            <td><b>Name</b></td>
+                                            <td>{{ obj.name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><b>Competing For</b></td>
+                                            <td>{{ obj.position }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
