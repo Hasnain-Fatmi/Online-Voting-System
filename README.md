@@ -72,6 +72,28 @@
 
 ● Saad Hussain (21L-5178)
 
+## Pictures
+
+--Home Page
+![alt text](https://github.com/Hasnain-Fatmi/Online-Voting-System/blob/main/Images/home.jpg)
+
+-- Voter Dashboard
+
+![alt text](https://github.com/Hasnain-Fatmi/Online-Voting-System/blob/main/Images/voter%20dashboard.jpg)
+
+-- Election Page
+
+![alt text](https://github.com/Hasnain-Fatmi/Online-Voting-System/blob/main/Images/election.jpg)
+
+--Voted Candidates Page
+
+![alt text](https://github.com/Hasnain-Fatmi/Online-Voting-System/blob/main/Images/voted.jpg)
+
+-- Result View 
+
+![alt text](https://github.com/Hasnain-Fatmi/Online-Voting-System/blob/main/Images/Result.jpg)
+
+
 # NOTE
 
 ● For Email Verification, You would have to add an email in the setting.py file.
